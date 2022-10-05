@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import "./AdDesigner.css";
 
@@ -9,13 +7,13 @@ function AdDesigner() {
     const [Fontsize, setFontsize] = useState<number>(24);
 
     function Sizehandler (change:number) {
-        
         setFontsize(Fontsize + change );
     }
+    
     return (
         <div className="AdDesigner">
             <h2>AdDesigner</h2>
-            <div className="ad-container">
+            <div className={"ad-container " + color} >
                 <p>Vote for:</p>
                 <p>{flavor}</p>
             </div>

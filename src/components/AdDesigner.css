@@ -1,10 +1,12 @@
-.light{
+.Light{
     border: solid 2px #222;
     color: #000;
     background-color: #fff;
+    width: 50%;
 }
 
-.dark{
+.Dark{
     background-color: #222;
     color: #fff;
+    width: 50%;
 }

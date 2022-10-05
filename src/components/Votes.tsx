@@ -1,4 +1,4 @@
-import { setUncaughtExceptionCaptureCallback } from "process";
+import "./Votes.css";
 import React, { useState } from "react";
 
 export default function Votes() {
@@ -7,9 +7,18 @@ export default function Votes() {
     let [chocolateVotes, setChocolateVotes] =useState(0);
     let [vanillaVotes, setVanillaVotes] = useState(0);
     let [strawberryVotes, setStrawberryVotes] = useState(0);
-    let [chocolatebar, setChocolateBar] = useState(0);
-    let [vanillabar, setVanillaBar] = useState(0);
-    let [strawberrybar, setStrabberyBar] =useState(0);
+
+    let chocolateStyles = {
+        width: ((chocolateVotes) / (totalVotes) * 100).toFixed(1) + "%",
+    }
+
+    let vanillaStyles = {
+        width: ((vanillaVotes) / (totalVotes) * 100).toFixed(1) + "%",
+    }
+
+    let strawberryStyles = {
+        width: ((strawberryVotes) / (totalVotes) * 100).toFixed(1) + "%",
+    }
     
    function addVotes(vote: string) {
        if(vote === "Chocolate"){
@@ -17,7 +26,7 @@ export default function Votes() {
        } else if (vote === "Vanilla"){
            setVanillaVotes(vanillaVotes + 1);
        } else if (vote === "Strawberry"){
-           setStrawberryVotes(vanillaVotes + 1);
+           setStrawberryVotes(strawberryVotes + 1);
        }
    }
 
@@ -33,20 +42,15 @@ export default function Votes() {
             <button onClick={() => handleVotes("Chocolate")}>Chocolate</button>
             <button onClick={() => handleVotes("Vanilla")}>Vanilla</button>
             <button onClick={() => handleVotes("Strawberry")}>Strawberry</button>
-            <div className="ad-container">
-                <p>Vote for:</p>
-                <p>{flavor}</p>
-                <p>{totalVotes}</p>
-            </div>
             <div>
                 {totalVotes === 0 && <span>No Votes Yet</span>}
                 {totalVotes > 0 && <div>
                         <p>Chocolate: {chocolateVotes} ({((chocolateVotes) / (totalVotes) * 100).toFixed(1)}%)</p>
-                        <div className="chocolateBar"></div>
+                        <div className="chocolateBar" style={chocolateStyles}></div>
                         <p>Vanilla: {vanillaVotes} ({((vanillaVotes) / (totalVotes) * 100).toFixed(1)}%)</p>
-                        <div className="vanillaBar"></div>
+                        <div className="vanillaBar" style={vanillaStyles}></div>
                         <p>Strawberry: {strawberryVotes} ({((strawberryVotes) / (totalVotes) * 100).toFixed(1)}%)</p>
-                        <div className= "strawberryBar"></div>
+                        <div className= "strawberryBar" style={strawberryStyles}></div>
                     </div>
                 }
             </div>
