@@ -1,11 +1,15 @@
 import "./Header.css";
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
-</style>
+import React from "react";
 
-function Header() {
-    return (
+interface HeaderProps {
+    user:string;
+}
+
+ function Header(user:HeaderProps) {
+    return (<div className="Header">
         <h1>Ice Cream Wars</h1>
+        <p>Welcome {user.user} </p>
+    </div>
     )
 }
 

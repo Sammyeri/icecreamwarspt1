@@ -1,3 +1,9 @@
+.Votes{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
 .chocolateBar{
     height: 20px;
     background-color: #4f2c2c;
@@ -14,4 +20,8 @@
     height: 20px;
     background-color: #de8c91;
     border-radius: 5px;
+}
+
+button {
+    content: auto;
 }

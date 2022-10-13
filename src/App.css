@@ -1,5 +1,7 @@
-body{
-    font-family: sans-serif;
+.Ads-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
 }
 
 button{
